@@ -1,5 +1,8 @@
 *.pdf
 LLM/data/*.pdf
+LLM/
 .venv/
 *.pyc
 *.zip
+*.csv
+*.txt
