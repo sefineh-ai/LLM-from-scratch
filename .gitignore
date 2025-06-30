@@ -1,4 +1,5 @@
 *.pdf
+LLM/data/*.pdf
 .venv/
 *.pyc
 *.zip
