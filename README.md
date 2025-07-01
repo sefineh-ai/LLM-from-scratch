@@ -1,57 +1,70 @@
 # LLM-from-scratch
 
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.x-blue?logo=pytorch)](https://pytorch.org/) [![License: Public Domain](https://img.shields.io/badge/license-Public%20Domain-brightgreen.svg)](https://www.gutenberg.org/policy/license.html)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.x-blue?logo=pytorch)](https://pytorch.org/) [![Modular Code](https://img.shields.io/badge/Modular%20Code-Yes-brightgreen)](./) [![License: Public Domain](https://img.shields.io/badge/license-Public%20Domain-brightgreen.svg)](https://www.gutenberg.org/policy/license.html)
 
-> **A minimal, educational GPT-style next-token generator built from scratch in PyTorch.**
-
----
-
-## Table of Contents
-- [LLM-from-scratch](#llm-from-scratch)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-  - [Features](#features)
-  - [Dataset](#dataset)
-  - [Requirements](#requirements)
-  - [Installation](#installation)
-  - [Usage](#usage)
-    - [Training](#training)
-    - [Chat/Generation](#chatgeneration)
-  - [Customization](#customization)
-  - [Example Output](#example-output)
-  - [Contributing](#contributing)
-  - [License \& Credits](#license--credits)
+> **A modular, professional, and educational implementation of a GPT-style next-token generator in PyTorch.**
 
 ---
 
-## Overview
+## 🚀 Project Overview
 
-**LLM-from-scratch** is a simple, readable implementation of a GPT-style character-level language model. It is designed for learning, experimentation, and as a starting point for research. The model can be trained on any plain text and used for next-token (auto-regressive) text generation.
+**LLM-from-scratch** is a clean, modular, and extensible implementation of a GPT-style character-level language model. Designed for both learning and rapid prototyping, this project demonstrates modern ML engineering best practices, including:
 
----
-
-## Features
-- Transformer-based architecture (multi-head causal self-attention)
-- Character-level tokenization (no external dependencies)
-- Next-token generation (auto-regressive)
-- Simple training and interactive chat/generation interface
-- Easily extensible for research and learning
+- Clear separation of model, tokenizer, training, and inference logic
+- Readable, well-documented code
+- Easy extensibility for research and production prototyping
+- Minimal dependencies (just PyTorch)
 
 ---
 
-## Dataset
+## 🏗️ Project Structure
 
-The default dataset is [Alice's Adventures in Wonderland](https://www.gutenberg.org/ebooks/11) from Project Gutenberg, but you can use any plain text file by replacing `sample_chat_corpus.txt`.
+```
+LLM-from-scratch/
+├── model.py        # Model classes (GPT, TransformerBlock, etc.)
+├── tokenizer.py    # CharTokenizer and tokenization utilities
+├── train.py        # Training loop and batch generation
+├── chat.py         # Chat/interactive generation logic
+├── main.py         # Entry point: loads data, trains, and launches chat
+├── sample_chat_corpus.txt  # Training data (default: Alice in Wonderland)
+├── README.md
+└── requirements.txt
+```
 
 ---
 
-## Requirements
-- Python 3.8+
-- PyTorch 2.x
+## 🧩 Architecture Diagram
+
+```mermaid
+graph TD;
+    A[main.py] --> B[model.py];
+    A --> C[tokenizer.py];
+    A --> D[train.py];
+    A --> E[chat.py];
+    D --> B;
+    D --> C;
+    E --> B;
+    E --> C;
+```
 
 ---
 
-## Installation
+## ✨ Features
+- **Modern Transformer Architecture:** Multi-head causal self-attention, position-wise feedforward, custom LayerNorm
+- **Character-level Tokenization:** No external dependencies
+- **Next-token Generation:** Auto-regressive, temperature and top-k sampling
+- **Interactive Chat:** CLI-based, easy to extend to web or API
+- **Extensible & Readable:** Perfect for research, education, and prototyping
+
+---
+
+## 📚 Dataset
+- Default: [Alice's Adventures in Wonderland](https://www.gutenberg.org/ebooks/11) (Project Gutenberg, public domain)
+- Swap in any plain text file by replacing `sample_chat_corpus.txt`
+
+---
+
+## ⚡ Quickstart
 
 1. **Clone the repository:**
    ```bash
@@ -67,38 +80,24 @@ The default dataset is [Alice's Adventures in Wonderland](https://www.gutenberg.
    ```bash
    pip install torch
    ```
+4. **(Optional) Replace `sample_chat_corpus.txt` with your own text.**
+5. **Train and chat:**
+   ```bash
+   python3 main.py
+   ```
 
 ---
 
-## Usage
-
-### Training
-
-The model will automatically train on the text in `sample_chat_corpus.txt`:
-```bash
-python3 model.py
-```
-
-### Chat/Generation
-
-After training, the script enters interactive mode. Type a prompt and the model will generate a continuation:
-```
-You: Once upon a time
-AI:  there was a little girl named Alice who...
-```
-Type `exit` or `quit` to end the session.
+## 🛠️ Extensibility
+- **Swap in your own tokenizer** (word-level, BPE, etc.) via `tokenizer.py`
+- **Upgrade the model** (add layers, attention types, etc.) in `model.py`
+- **Integrate with web or API** by extending `chat.py`
+- **Experiment with datasets** by changing `sample_chat_corpus.txt`
+- **Add logging, callbacks, or experiment tracking** as needed
 
 ---
 
-## Customization
-- **Change the dataset:** Replace `sample_chat_corpus.txt` with any plain text file.
-- **Adjust model/training parameters:** Edit `model.py` to change model size, batch size, epochs, etc.
-- **Experiment:** Try different sampling parameters (`temperature`, `top_k`) for more creative or conservative outputs.
-
----
-
-## Example Output
-
+## 📝 Example Output
 ```
 You: The rabbit
 AI:  was running very fast and Alice followed him down the hole.
@@ -106,17 +105,15 @@ AI:  was running very fast and Alice followed him down the hole.
 
 ---
 
-## Contributing
-
-Contributions, issues, and feature requests are welcome! Please open an issue or submit a pull request.
+## 🤝 Contributing
+We welcome contributions, issues, and feature requests! Please open an issue or submit a pull request.
 
 ---
 
-## License & Credits
-
+## 📄 License & Credits
 - **Code:** MIT License or Public Domain (choose your preferred open license)
 - **Dataset:** [Project Gutenberg, Alice's Adventures in Wonderland](https://www.gutenberg.org/ebooks/11) (public domain)
 
 ---
 
-**Created by [Your Name or GitHub handle]** 
+**Created and maintained by [Your Name or GitHub handle]** 
