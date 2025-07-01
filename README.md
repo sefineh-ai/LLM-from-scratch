@@ -6,7 +6,7 @@
 
 ---
 
-## 🚀 Project Overview
+## Project Overview
 
 **LLM-from-scratch** is a clean, modular, and extensible implementation of a GPT-style character-level language model. Designed for both learning and rapid prototyping, this project demonstrates modern ML engineering best practices, including:
 
