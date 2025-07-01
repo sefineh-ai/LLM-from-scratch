@@ -97,6 +97,30 @@ graph TD;
 
 ---
 
+## ☁️ Deployment: AWS SageMaker
+
+You can deploy your trained model as a scalable endpoint on AWS SageMaker for research, demo, or prototyping purposes.
+
+**Basic Steps:**
+1. **Export your trained model:**
+   ```python
+   torch.save(model.state_dict(), 'gpt_model.pt')
+   ```
+2. **Upload the model artifact to S3.**
+3. **Create a SageMaker PyTorch Model:**
+   - Use the [SageMaker PyTorch Estimator](https://sagemaker.readthedocs.io/en/stable/frameworks/pytorch/using_pytorch.html) or [Model API](https://docs.aws.amazon.com/sagemaker/latest/dg/pytorch.html).
+   - Provide an inference script (handler) that loads the model and processes input/output.
+4. **Deploy as a SageMaker endpoint:**
+   - Use the SageMaker console or SDK to deploy the model for real-time inference.
+
+**References:**
+- [AWS SageMaker PyTorch Documentation](https://sagemaker.readthedocs.io/en/stable/frameworks/pytorch/using_pytorch.html)
+- [Deploying PyTorch models on SageMaker](https://docs.aws.amazon.com/sagemaker/latest/dg/pytorch.html)
+
+> **Note:** This project is designed for research and prototyping. For production, consider additional security, monitoring, and scaling best practices.
+
+---
+
 ## 📝 Example Output
 ```
 You: The rabbit
