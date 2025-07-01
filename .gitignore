@@ -6,3 +6,4 @@ LLM/
 *.zip
 *.csv
 *.txt
+*.ipynb
